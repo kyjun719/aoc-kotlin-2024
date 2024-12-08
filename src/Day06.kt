@@ -112,6 +112,6 @@ fun main() {
     check(part2(testInput) == 6) {
         "expected: 6, result: ${part2(testInput)}"
     }
-
+    // 2262
     println(part2(input))
 }
