@@ -68,11 +68,7 @@ fun main() {
         val board = lines.map { it.toCharArray() }
         board[row][col] = 'X'
 
-        val cnt = calcEscapeCount(row, col, board)
-
-        board.forEach { println(it.joinToString(separator = "")) }
-
-        return cnt
+        return calcEscapeCount(row, col, board)
     }
 
     fun part2(lines: List<String>): Int {
@@ -89,9 +85,8 @@ fun main() {
                 if (calculatedBoard[i][j] == 'X') {
                     val boardCopy = board.toList().map { it.copyOf() }
                     boardCopy[i][j] = '#'
-                    val cnt = calcEscapeCount(row, col, boardCopy)
 
-                    if (cnt == -1) nc++
+                    if (calcEscapeCount(row, col, boardCopy) == -1) nc++
                 }
             }
         }
